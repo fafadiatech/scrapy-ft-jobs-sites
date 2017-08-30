@@ -9,6 +9,9 @@ This is a scrapers for Job Aggregator written with Scrapy
 ## Included Sites
 
 - Indeed
+- Glassdoor
+- CarrerBuilder
+- Monster
 - TimesJob
 - Shine
 - Django Gig
