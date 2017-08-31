@@ -11,11 +11,12 @@ from scrapy_ft_jobs_sites.items import LeadItem
 
 from .base import BaseFTSpider
 
-class IndeedSpider(BaseFTSpider):
-    name = 'indeed'
-    allowed_domains = ['indeed.com']
-    base_url_pattern = "https://www.indeed.com/jobs?q="
-    start_urls = ['http://indeed.co.in/']
+
+class GlassdoorSpider(BaseFTSpider):
+    name = 'glassdoor'
+    allowed_domains = ['glassdoor.co.in']
+    base_url_pattern = "https://www.glassdoor.co.in/Job/us-"
+    start_urls = ['http://glassdoor.co.in/']
 
     rules = (
         Rule(LinkExtractor(
@@ -24,15 +25,14 @@ class IndeedSpider(BaseFTSpider):
             follow=False),
     )
 
-
     def __init__(self, *args, **kwargs):
-        super(IndeedSpider, self).__init__(*args, **kwargs)
+        super(GlassdoorSpider, self).__init__(*args, **kwargs)
 
         # Logic for start_urls creations
         self.start_urls = []
 
         for item in self.keywords:
-            URL = self.base_url_pattern + item.replace(" ", "+")
+            URL = self.base_url_pattern + item.replace(" ", "+") + ""
             self.start_urls.append(URL)
 
             for pagination in range(10, 60, 10):
