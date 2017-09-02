@@ -1,8 +1,9 @@
 from scrapy_ft_jobs_sites.items import LeadItem
 
-class IndeedParser:
+
+class BaseParser(object):
     """
-    Method to parse Indeed response
+    Base class for all parsers
     """
     soup = None
     source = None
@@ -12,6 +13,17 @@ class IndeedParser:
         self.soup = soup
         self.source = source
 
+
+    def parse_response(self):
+        pass
+
+    abstract = True
+
+
+class IndeedParser(BaseParser):
+    """
+    Method to parse Indeed response
+    """
 
     def parse_response(self):
         results = []
@@ -43,3 +55,8 @@ class IndeedParser:
 
             results.append(item)
         return results
+
+
+class GlassdoorParser(BaseParser):
+    def parse_response(self):
+        pass

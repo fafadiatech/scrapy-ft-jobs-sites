@@ -30,6 +30,10 @@ class BaseParserTestCase(object):
             self.assertNotEqual(actual_results, None)
             self.assertNotEqual(len(actual_results), 0)
 
+            for item in actual_results:
+                self.assertEqual(item['source'], self.SOURCE)
+
+
 class IndeedParserTest(BaseParserTestCase.BaseTest):
     """
     Test case to check parsing logic for IndeedParser
