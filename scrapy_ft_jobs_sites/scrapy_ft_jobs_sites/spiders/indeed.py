@@ -7,9 +7,10 @@ from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
 
 from scrapy_ft_jobs_sites import settings
-from scrapy_ft_jobs_sites.items import LeadItem
 
 from .base import BaseFTSpider
+from .parsers import IndeedParser
+
 
 class IndeedSpider(BaseFTSpider):
     name = 'indeed'
@@ -41,31 +42,5 @@ class IndeedSpider(BaseFTSpider):
 
     def parse_item(self, response):
         soup = BeautifulSoup(response.body, 'html.parser')
-        item = LeadItem()
-
-        postings = soup.find_all("div", {"itemtype": "http://schema.org/JobPosting"})
-
-        category = soup.find("input", {"name": "q"})['value']
-
-        for current in postings:
-            item['title'] = current.h2.a["title"]
-            item['source_url'] = "https://www.indeed.com" + current.h2.a["href"]
-            item['source'] = "".join(self.allowed_domains)
-            item['category'] = category
-
-            try:
-                item['company'] = current.find("span", {"itemprop": "name"}).a.text.strip()
-            except:
-                item['company'] = ""
-
-            try:
-                item['location'] = current.find("span", {"itemprop": "address"}).text.strip()
-            except:
-                item['location'] = ""
-
-            try:
-                item['blurb'] = current.find("span", {"itemprop": "description"}).text.strip()
-            except:
-                item['blurb'] = ""
-
-        return item
+        parser = IndeedParser(soup, "".join(self.allowed_domains))
+        return parser.parse_response()
