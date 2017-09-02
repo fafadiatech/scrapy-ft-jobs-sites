@@ -1,4 +1,5 @@
 import os
+import random
 import unittest
 import requests
 
@@ -8,18 +9,21 @@ from scrapy_ft_jobs_sites.spiders.parsers import IndeedParser, GlassdoorParser
 
 class BaseParserTestCase(object):
     """
-    Base class for all parser test
+    Base class for all parser tests
     """
     class BaseTest(unittest.TestCase):
         TEST_URL = ""
         SOURCE = ""
+        UA = [user_agent.strip() for user_agent in open(os.path.join("misc", "uas.txt")).readlines()]
 
         response = None
         soup = None
         parser_class = None
 
         def setUp(self):
-            html_response = requests.get(self.TEST_URL)
+            current_ua = random.choice(self.UA)
+            headers = {'User-Agent': random.choice(self.UA)}
+            html_response = requests.get(self.TEST_URL, headers=headers)
             self.assertEqual(html_response.status_code, 200)
             self.soup = BeautifulSoup(html_response.text, 'html.parser')
 
@@ -45,6 +49,7 @@ class IndeedParserTest(BaseParserTestCase.BaseTest):
     response = None
     soup = None
     parser_class = IndeedParser
+
 
 class GlassdoorParserTest(BaseParserTestCase.BaseTest):
     """
