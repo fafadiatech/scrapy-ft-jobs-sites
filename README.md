@@ -30,7 +30,13 @@ This is a scrapers for Job Aggregator written with Scrapy
 
 - `scrapy crawl indeed -t json -o indeed.json`, replace `indeed` with one of the above mentioned sites
 
+## Testing
+- Run test suite for parser by calling `python test_parsers.py` from root directory of the project
+
 ## Worklog
 
 - Aug 30 2017
 	- First commit
+- Sep 3 2017
+	- Refactored Spiders and Parsers
+	- Added `test_parsers.py` which is test suite used for checking parser
