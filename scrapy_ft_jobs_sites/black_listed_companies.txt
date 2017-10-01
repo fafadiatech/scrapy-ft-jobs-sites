@@ -82,3 +82,39 @@ Amazon HVH
 Philips
 The UPS Store
 Deloitte
+Barclays
+Calsoft
+Leo TechnoSoft
+Uber
+The Boston Consulting Group
+JP Morgan Chase
+Reliance Jio Infocomm Limited
+Iron Systems
+Verifacts Services Private Limited
+bain&company
+Hortonworks
+Hitachi Consulting
+UBS
+Accel Frontline Limited
+BlackRock
+TCS
+L&T Hydrocarbon Engineering
+Wipro LTD
+ThoughtWorks
+The MathWorks
+Yodlee Infotech Private Limited
+Fidelity Investments
+KPIT Technologies
+HDFC Bank
+DBS Bank
+ARRIS Group, Inc.
+Michael Page
+Honeywell
+AddRec Solutions
+Comodo
+Visa
+S&P Global Market Intelligence
+Shell
+Expedia
+MPC
+Neustar, Inc.
