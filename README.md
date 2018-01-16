@@ -6,6 +6,12 @@ This is a scrapers for Job Aggregator written with Scrapy
 
 - Sidharth Shah {sidharth@fafadiatech.com}
 
+## Setup instructions
+
+1. Setup virtualenv and activate it E.g. `virtualenv ~/envs/scrapy-ft-jobs-site` and `source ~/envs/scrapy-ft-jobs-site/bin/activate`
+1. Install the requirements `pip install -r requirements.txt`
+1. Test a crawl `scrapy crawl indeed -t json -o indeed.json`
+
 ## Included Sites
 
 - Indeed
