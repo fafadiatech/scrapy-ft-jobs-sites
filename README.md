@@ -4,7 +4,14 @@ This is a scrapers for Job Aggregator written with Scrapy
 
 ## Authors
 
-- Sidharth Shah {sidharth@fafadiatech.com}
+- Shalini Chaturvedi
+- Yamini Parab
+- Tejashree Mane
+- Jitendra Varma
+- Ravi Pal
+- Oankar Marathe
+- Nilam Pal
+- Sidharth Shah
 
 ## Setup instructions
 
