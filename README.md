@@ -7,7 +7,7 @@ This is a scrapers for Job Aggregator written with Scrapy
 - Shalini Chaturvedi
 - Yamini Parab
 - Tejashree Mane
-- Jitendra Varma
+- [Jitendra Varma](https://github.com/jitendravarma)
 - Ravi Pal
 - Oankar Marathe
 - Nilam Pal
