@@ -14,7 +14,7 @@ hyperlink==17.3.1
 idna==2.6
 incremental==17.5.0
 ipaddress==1.0.19
-lxml==3.8.0
+lxml==4.6.3
 parsel==1.2.0
 pluggy==0.6.0
 py==1.5.2
