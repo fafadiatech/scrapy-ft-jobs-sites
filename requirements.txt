@@ -17,7 +17,7 @@ ipaddress==1.0.19
 lxml==3.8.0
 parsel==1.2.0
 pluggy==0.6.0
-py==1.5.2
+py==1.10.0
 pyasn1==0.3.3
 pyasn1-modules==0.1.1
 pycparser==2.18
